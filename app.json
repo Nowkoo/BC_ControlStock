@@ -1,0 +1,69 @@
+{
+    "id": "da2a769f-83b6-47c9-a668-0a58ec679e46",
+    "name": "ControlStock",
+    "publisher": "Default Publisher",
+    "version": "1.0.0.0",
+    "brief": "",
+    "description": "",
+    "privacyStatement": "",
+    "EULA": "",
+    "help": "",
+    "url": "",
+    "logo": "",
+    "dependencies": [
+        {
+            "id": "B3780CD9-F8F8-4A83-A4D5-0C2AD87B28AF",
+            "name": "Sustainability",
+            "publisher": "Microsoft",
+            "version": "26.0.30643.31112"
+        },
+        {
+            "id": "E2AE191D-8829-44C3-A373-3749A2742D4E",
+            "name": "Enforced Digital Vouchers",
+            "publisher": "Microsoft",
+            "version": "26.0.30643.31112"
+        },
+        {
+            "id": "E1D97EDC-C239-46B4-8D84-6368BDF67C8B",
+            "name": "E-Document Core",
+            "publisher": "Microsoft",
+            "version": "26.0.30643.31112"
+        },
+        {
+            "id": "3099FFC7-4CF7-4DF6-9B96-7E4BC2BB587C",
+            "name": "Subscription Billing",
+            "publisher": "Microsoft",
+            "version": "26.0.30643.31112"
+        },
+        {
+            "id": "70912191-3C4C-49FC-A1DE-BC6EA1AC9DA6",
+            "name": "Intrastat Core",
+            "publisher": "Microsoft",
+            "version": "26.0.30643.31112"
+        },
+        {
+            "id": "C526B3E9-B8CA-4683-81BA-FCD5F6B1472A",
+            "name": "Sales and Inventory Forecast",
+            "publisher": "Microsoft",
+            "version": "26.0.30643.31112"
+        }
+    ],
+    "screenshots": [],
+    "platform": "1.0.0.0",
+    "application": "26.0.30643.31112",
+    "idRanges": [
+        {
+            "from": 60150,
+            "to": 60200
+        }
+    ],
+    "resourceExposurePolicy": {
+        "allowDebugging": true,
+        "allowDownloadingSource": true,
+        "includeSourceInSymbolFile": true
+    },
+    "runtime": "15.0",
+    "features": [
+        "NoImplicitWith"
+    ]
+}
