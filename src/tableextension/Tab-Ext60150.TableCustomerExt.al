@@ -17,7 +17,4 @@ tableextension 60150 "Table Customer Ext" extends Customer
     {
         // Add changes to field groups here
     }
-
-    var
-        myInt: Integer;
 }

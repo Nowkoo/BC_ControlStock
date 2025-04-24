@@ -1,6 +1,6 @@
 report 60150 "Email Body RDL Report"
 {
-    UsageCategory = ReportsAndAnalysis;
+    UsageCategory = None;
     ApplicationArea = All;
     DefaultRenderingLayout = EmailBodyRDL;
 

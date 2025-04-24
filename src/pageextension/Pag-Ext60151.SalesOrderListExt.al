@@ -1,4 +1,4 @@
-pageextension 60150 "Sales Order Ext" extends "Sales Order"
+pageextension 60151 "Sales Order List Ext" extends "Sales Order List"
 {
     layout
     {
@@ -7,31 +7,7 @@ pageextension 60150 "Sales Order Ext" extends "Sales Order"
 
     actions
     {
-        /*  modify(Release)
-         {
-             trigger OnBeforeAction()
-             var
-                 SalesLine: Record "Sales Line";
-                 Item: Record "Item";
-                 ItemsToPurchase: Record Item temporary;
-                 ConfirmPurchase: Boolean;
-                 PurchHeaderNoList: List of [Text];
-                 Filter: Text;
-             begin
-                 StockMgmt.ControlStock(Rec);
-             end;
-         } */
-
-        /* modify(Post)
-        {
-            trigger OnAfterAction()
-            begin
-                SendEmail.SendReport(Rec."No.", Rec."Sell-to Customer No.");
-            end;
-        } */
-
-
-        addafter(Action21)
+        addafter(Action12)
         {
             action(EmailSubjects)
             {

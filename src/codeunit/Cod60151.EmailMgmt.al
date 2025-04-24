@@ -1,5 +1,30 @@
 codeunit 60151 "Email Mgmt"
 {
+    [EventSubscriber(ObjectType::Page, Page::"Sales Order", OnPostDocumentBeforeNavigateAfterPosting, '', true, true)]
+    local procedure SendReport(var SalesHeader: Record "Sales Header")
+    var
+        TempEmailItem: Record "Email Item" temporary;
+        GlobalHideDialog: Boolean;
+        GlobalEmailScenario: Enum "Email Scenario";
+        SalesInvoiceHeader: Record "Sales Invoice Header";
+
+        MailManagement: Codeunit "Mail Management";
+    begin
+        Clear(TempEmailItem);
+
+        SalesInvoiceHeader.SetRange("Order No.", SalesHeader."No.");
+        if not SalesInvoiceHeader.FindSet() then
+            exit;
+
+        TempEmailItem.SetBodyText(GetEmailBody(SalesInvoiceHeader));
+        TempEmailItem.Validate("Send to", GetEmailAddress(SalesHeader."Sell-to Customer No."));
+        TempEmailItem.Subject := GetSubject(SalesHeader."Sell-to Customer No.");
+        AddReportAsAttachment(SalesInvoiceHeader, TempEmailItem);
+        GlobalHideDialog := true;
+        TempEmailItem.Send(GlobalHideDialog, GlobalEmailScenario);
+        //MailManagement.Send(TempEmailItem, GlobalEmailScenario);
+    end;
+
     procedure GetSubject(CustomerNo: Code[20]): Text
     var
         Customer: Record Customer;
@@ -40,20 +65,22 @@ codeunit 60151 "Email Mgmt"
         RecordRef.GetTable(SalesInvoiceHeader);
         TempBlob.CreateOutStream(OutStream);
 
-        if Report.SaveAs(Report::"Email Body RDL Report", '', ReportFormat::Xml, OutStream, RecordRef) then begin
+        if Report.SaveAs(Report::"Email Body Word Report", '', ReportFormat::Html, OutStream, RecordRef) then begin
             TempBlob.CreateInStream(InStream);
-            if XmlDocument.ReadFrom(InStream, XmlDoc) then begin
-                // XmlDoc.GetRoot(Root);
-                // Message(Root.InnerXml);
+            InStream.ReadText(ResultingTxt);
 
-                NodesToSelect.AddRange('//Label[@name="Greetings"]', '//DataItem[@name="Customer"]', '//Label[@name="AddressTxt"]', '//Column[@name="BillToAddress"]', '//Label[@name="DateTxt"]', '//Column[@name="ShipmentDate"]');
-                foreach Txt in NodesToSelect do begin
-                    XmlDoc.SelectSingleNode(Txt, XmlNode);
-                    ResultingTxt := ResultingTxt + XmlNode.AsXmlElement().InnerText + ' ';
-                end;
+            // if XmlDocument.ReadFrom(InStream, XmlDoc) then begin
+            //     // XmlDoc.GetRoot(Root);
+            //     // Message(Root.InnerXml);
 
-                Exit(ResultingTxt);
-            end;
+            //     NodesToSelect.AddRange('//Label[@name="Greetings"]', '//DataItem[@name="Customer"]', '//Label[@name="AddressTxt"]', '//Column[@name="BillToAddress"]', '//Label[@name="DateTxt"]', '//Column[@name="ShipmentDate"]');
+            //     foreach Txt in NodesToSelect do begin
+            //         XmlDoc.SelectSingleNode(Txt, XmlNode);
+            //         ResultingTxt := ResultingTxt + XmlNode.AsXmlElement().InnerText + ' ';
+            //     end;
+            // end;
+
+            Exit(ResultingTxt);
         end;
     end;
 
@@ -79,25 +106,5 @@ codeunit 60151 "Email Mgmt"
             TempBlob.CreateInStream(InStream);
             EmailItem.AddAttachment(InStream, 'Custom sales invoice.pdf');
         end;
-    end;
-
-    procedure SendReport(SalesHeaderNo: Code[20]; CustomerNo: Code[20])
-    var
-        TempEmailItem: Record "Email Item" temporary;
-        GlobalHideDialog: Boolean;
-        GlobalEmailScenario: Enum "Email Scenario";
-        SalesInvoiceHeader: Record "Sales Invoice Header";
-    begin
-        Clear(TempEmailItem);
-
-        SalesInvoiceHeader.SetFilter("Order No.", SalesHeaderNo);
-        if not SalesInvoiceHeader.FindSet() then
-            exit;
-
-        TempEmailItem.SetBodyText(GetEmailBody(SalesInvoiceHeader));
-        TempEmailItem."Send to" := GetEmailAddress(CustomerNo);
-        TempEmailItem.Subject := GetSubject(CustomerNo);
-        AddReportAsAttachment(SalesInvoiceHeader, TempEmailItem);
-        TempEmailItem.Send(GlobalHideDialog, GlobalEmailScenario);
     end;
 }

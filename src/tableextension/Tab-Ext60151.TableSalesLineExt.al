@@ -9,14 +9,15 @@ tableextension 60151 "Table Sales Line Ext" extends "Sales Line"
                 UpdatePurchLineQuantity();
             end;
         }
-        /* field(60150; "Purchase Line No"; Integer)
+
+        field(60150; "Purchase Line No"; Integer)
         {
             DataClassification = CustomerContent;
         }
-        field(60151; "Purchase Line Document No"; Integer)
+        field(60151; "Purchase Line Document No"; Code[20])
         {
             DataClassification = CustomerContent;
-        } */
+        }
     }
 
     keys
@@ -38,14 +39,10 @@ tableextension 60151 "Table Sales Line Ext" extends "Sales Line"
     begin
         QuantityToAdd := Rec.Quantity - xRec.Quantity;
 
-        if (Rec."Purch. Order Line No." = 0) and (Rec."Purchase Order No." = '') then
+        if (Rec."Purchase Line No" = 0) and (Rec."Purchase Line Document No" = '') then
             exit;
 
-        PurchaseLine.SetRange("Document No.", Rec."Purchase Order No.");
-        PurchaseLine.SetRange("Line No.", "Purch. Order Line No.");
-        PurchaseLine.SetRange("Document Type", PurchaseLine."Document Type"::Order);
-
-        if PurchaseLine.FindFirst() then begin
+        if PurchaseLine.Get(PurchaseLine."Document Type"::Order, Rec."Purchase Line Document No", "Purchase Line No") then begin
             PurchaseHeader := PurchaseLine.GetPurchHeader();
 
             if not PurchaseHeader.IsEmpty() then begin

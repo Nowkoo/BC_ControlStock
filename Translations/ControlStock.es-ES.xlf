@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="ControlStock">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 473686509 - Field 1754546768 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer Type</source>
+          <target>Tipo de cliente</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Email Subjects - Field Customer Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 473686509 - Field 1234124704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subject</source>
+          <target>Asunto</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Email Subjects - Field Subject - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 1907521497" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is not enough stock for one or more items in the order. Do you want to purchase the missing amounts?</source>
+          <target>No hay suficiente stock de uno o más productos de este pedido. ¿Quiere comprar las cantidades que falten?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ConfirmPurchaseLabel</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 3443829541" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All the items in this order are already linked to a purchase order. Sale Order was not released. Try again when the items are received.</source>
+          <target>Todos los productos de este pedido están ya vinculados a un pedido de compra. No se ha lanzado el pedido de venta. Pruebe otra vez cuando haya recibido los productos.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ErrorAllLinesAreLinked</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 1661734167" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sale Order was not released because there is not enough stock of one or more items.</source>
+          <target>No se ha podido lanzar el pedido de venta porque no hay suficiente stock de uno o más productos.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ErrorNotEnoughStockLabel</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 3300756767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sale Order was not released. Try again when the items are received.</source>
+          <target>No se ha lanzado el pedido de venta. Pruebe otra vez cuando haya recibido los productos.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ErrorTryReleaseWhenReceived</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 154605416" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more purchase orders have been created or modified.</source>
+          <target>Se ha creado o modificado uno o más pedidos de compra.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType PurchasedOrdersLabel</note>
+        </trans-unit>
+        <trans-unit id="Page 473686509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email Subjects</source>
+          <target>Asuntos de correo</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 473686509 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of the customer.</source>
+          <target>Tipo de cliente</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Customer Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 473686509 - Control 1234124704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specify a subject for the email to this customer type.</source>
+          <target>Especifique un asunto de correo para este tipo de cliente.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Subject - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 2001373572 - ReportLabel 3871258722" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Your order will be sent to </source>
+          <target>Su pedido será enviado a </target>
+          <note from="Developer" annotates="general" priority="2">Foo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Email Body RDL Report - ReportLabel AddressTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 2001373572 - ReportLabel 350441376" size-unit="char" translate="yes" xml:space="preserve">
+          <source>on date </source>
+          <target>en fecha de </target>
+          <note from="Developer" annotates="general" priority="2">Foo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Email Body RDL Report - ReportLabel DateTxt</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1713901351 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Select a Customer Type.</source>
+          <target>Seleccione el tipo de cliente.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerExt - Control Customer Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 3525984917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set an email subject for each type of customer.</source>
+          <target>Configure un asunto de correo para cada tipo de cliente.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action EmailSubjects - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 3525984917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Email Subjects</source>
+          <target>Asuntos de correo</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action EmailSubjects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 3649379592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Display the purchase orders linked to this sales order.</source>
+          <target>Mostrar los pedidos de compra vinculados a este pedido de venta.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action LinkedOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 3649379592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Linked Orders</source>
+          <target>Pedidos vinculados</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 3525984917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Set an email subject for each type of customer.</source>
+          <target>Configure un asunto de correo para cada tipo de cliente.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action EmailSubjects - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 3525984917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Email Subjects</source>
+          <target>Asuntos de correo</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action EmailSubjects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 3649379592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Display the purchase orders linked to this sales order.</source>
+          <target>Mostrar los pedidos de compra vinculados a este pedido de venta.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action LinkedOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 3649379592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Linked Orders</source>
+          <target>Pedidos vinculados</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2393976901 - Field 1754546768 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>Customer Type</source>
+          <target>Tipo de cliente</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Table Customer Ext - Field Customer Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1451574691 - Field 2210849109 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Purchase Line Document No</source>
+          <target>No documento línea de compra</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Table Sales Line Ext - Field Purchase Line Document No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1451574691 - Field 739043640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Purchase Line No</source>
+          <target>No línea de compra</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Table Sales Line Ext - Field Purchase Line No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 935227093 - ReportLayout 4204597913 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Custom sales invoice in Word</source>
+          <target>Factura de venta personalizada en Word</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales Invoice Ext - ReportLayout CustomWordLayout - Property Summary</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 935227093 - ReportLayout 4204597913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Custom sales invoice</source>
+          <target>Factura de venta personalizada</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales Invoice Ext - ReportLayout CustomWordLayout - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

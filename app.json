@@ -64,6 +64,6 @@
     },
     "runtime": "15.0",
     "features": [
-        "NoImplicitWith"
+        "NoImplicitWith", "TranslationFile"
     ]
 }

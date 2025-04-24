@@ -54,14 +54,4 @@ page 60150 "Email Subjects"
             end;
         end;
     end;
-
-    local procedure GetEmailByCustomerType(CustomerType: Enum "Customer Type Enum"): Text
-    var
-        EmailSubjectsRec: Record "Email Subjects";
-    begin
-        EmailSubjectsRec.Init();
-        EmailSubjectsRec.Get(CustomerType);
-        if not EmailSubjectsRec.IsEmpty then
-            exit(EmailSubjectsRec.Subject);
-    end;
 }
