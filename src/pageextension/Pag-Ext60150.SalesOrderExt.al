@@ -33,40 +33,64 @@ pageextension 60150 "Sales Order Ext" extends "Sales Order"
 
         addafter(Action21)
         {
-            action(EmailSubjects)
+            group(StockControl)
             {
-                ApplicationArea = All;
-                Caption = 'Email Subjects';
-                //Enabled = Rec.Status <> Rec.Status::Released;
-                Image = ReleaseDoc;
-                //ShortCutKey = 'Ctrl+F9';
-                ToolTip = 'Set an email subject for each type of customer.';
+                Caption = 'Stock control';
+                Image = Inventory;
 
-                // RunObject = page "Purchase Order List";
-                // RunPageLink = "No." = filter(106005 .. 106007);
+                action(EmailSubjects)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Email Subjects';
+                    //Enabled = Rec.Status <> Rec.Status::Released;
+                    Image = Email;
+                    //ShortCutKey = 'Ctrl+F9';
+                    ToolTip = 'Set an email subject for each type of customer.';
 
-                trigger OnAction()
-                begin
-                    Page.Run(Page::"Email Subjects");
-                end;
-            }
+                    // RunObject = page "Purchase Order List";
+                    // RunPageLink = "No." = filter(106005 .. 106007);
 
-            action(LinkedOrders)
-            {
-                ApplicationArea = All;
-                Caption = 'Linked Orders';
-                //Enabled = Rec.Status <> Rec.Status::Released;
-                Image = ReleaseDoc;
-                //ShortCutKey = 'Ctrl+F9';
-                ToolTip = 'Display the purchase orders linked to this sales order.';
+                    trigger OnAction()
+                    begin
+                        Page.Run(Page::"Email Subjects");
+                    end;
+                }
 
-                // RunObject = page "Purchase Order List";
-                // RunPageLink = "No." = filter(106005 .. 106007);
+                action(LinkedOrders)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Linked Orders';
+                    //Enabled = Rec.Status <> Rec.Status::Released;
+                    Image = RelatedInformation;
+                    //ShortCutKey = 'Ctrl+F9';
+                    ToolTip = 'Display the purchase orders linked to this sales order.';
 
-                trigger OnAction()
-                begin
-                    StockMgmt.DisplayLinkedOrders(Rec);
-                end;
+                    // RunObject = page "Purchase Order List";
+                    // RunPageLink = "No." = filter(106005 .. 106007);
+
+                    trigger OnAction()
+                    begin
+                        StockMgmt.DisplayLinkedPurchaseOrders(Rec);
+                    end;
+                }
+
+                action(ClearPurchOrders)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Clear linked orders';
+                    //Enabled = Rec.Status <> Rec.Status::Released;
+                    Image = ClearLog;
+                    //ShortCutKey = 'Ctrl+F9';
+                    ToolTip = 'Clear purchase orders linked to this sales order.';
+
+                    // RunObject = page "Purchase Order List";
+                    // RunPageLink = "No." = filter(106005 .. 106007);
+
+                    trigger OnAction()
+                    begin
+                        StockMgmt.ClearLinkedPurchOrders(Rec);
+                    end;
+                }
             }
         }
     }

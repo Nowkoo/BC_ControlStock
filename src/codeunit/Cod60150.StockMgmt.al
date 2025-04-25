@@ -43,7 +43,7 @@ codeunit 60150 "Stock Mgmt"
         if ConfirmPurchase then begin
             Commit();
             RemoveRepeated(PurchHeaderNoList);
-            Filter := GetFilterFromListOfPurchHeaderNo(PurchHeaderNoList);
+            Filter := GetFilterFromListOfHeaderNo(PurchHeaderNoList);
         end;
 
         if not IsEmptySalesLine then begin
@@ -56,7 +56,7 @@ codeunit 60150 "Stock Mgmt"
                 Error(ErrorTryReleaseWhenReceived);
             end
             else begin
-                PurchHeaderNoList := DisplayLinkedOrders(SalesHeader);
+                PurchHeaderNoList := DisplayLinkedPurchaseOrders(SalesHeader);
                 if PurchHeaderNoList.Count() <> 0 then
                     Error(ErrorAllLinesAreLinked);
             end;
@@ -64,7 +64,7 @@ codeunit 60150 "Stock Mgmt"
         end;
     end;
 
-    procedure DisplayLinkedOrders(SalesHeader: Record "Sales Header") PurchHeaderNoList: List of [Text]
+    procedure DisplayLinkedPurchaseOrders(SalesHeader: Record "Sales Header") PurchHeaderNoList: List of [Text]
     var
         SalesLine: Record "Sales Line";
         PurchaseHeader: Record "Purchase Header";
@@ -80,7 +80,7 @@ codeunit 60150 "Stock Mgmt"
             until SalesLine.Next() = 0;
 
         RemoveRepeated(PurchHeaderNoList);
-        Filter := GetFilterFromListOfPurchHeaderNo(PurchHeaderNoList);
+        Filter := GetFilterFromListOfHeaderNo(PurchHeaderNoList);
 
         if PurchHeaderNoList.Count() <> 0 then begin
             if (PurchHeaderNoList.Count() = 1) then begin
@@ -91,8 +91,43 @@ codeunit 60150 "Stock Mgmt"
                 RunFilteredPurchaseOrders(Filter);
         end
         else
-            Message(NoLinkedOrdersLabel);
+            Message(NoLinkedPurchOrdersLabel);
         exit(PurchHeaderNoList)
+    end;
+
+    procedure DisplayLinkedSalesOrders(PurchaseHeader: Record "Purchase Header")
+    var
+        SalesLine: Record "Sales Line";
+        SalesHeader: Record "Sales Header";
+        PurchaseLine: Record "Purchase Line";
+        Filter: Text;
+        SalesHeaderNoList: List of [Text];
+
+    begin
+        PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
+        if PurchaseLine.FindSet() then
+            repeat
+                SalesLine.SetRange("Purchase Line Document No", PurchaseHeader."No.");
+                SalesLine.SetRange("Purchase Line No", PurchaseLine."Line No.");
+                if SalesLine.FindSet() then
+                    repeat
+                        SalesHeaderNoList.Add(SalesLine."Document No.");
+                    until SalesLine.Next() = 0;
+            until PurchaseLine.Next() = 0;
+
+        RemoveRepeated(SalesHeaderNoList);
+        Filter := GetFilterFromListOfHeaderNo(SalesHeaderNoList);
+
+        if SalesHeaderNoList.Count() <> 0 then begin
+            if (SalesHeaderNoList.Count() = 1) then begin
+                if SalesHeader.Get(SalesHeader."Document Type"::Order, SalesHeaderNoList.Get(1)) then
+                    Page.Run(Page::"Sales Order", SalesHeader)
+            end
+            else
+                RunFilteredSalesOrders(Filter);
+        end
+        else
+            Message(NoLinkedSalesOrdersLabel);
     end;
 
     local procedure PurchaseItem(ItemToPurchase: Record Item; SalesLine: Record "Sales Line"): Text
@@ -228,6 +263,17 @@ codeunit 60150 "Stock Mgmt"
         PurchOrder.Run();
     end;
 
+    local procedure RunFilteredSalesOrders(Filter: Text)
+    var
+        SalesOrder: Page "Sales Order List";
+        SalesHeader: Record "Sales Header";
+    begin
+        SalesHeader.SetFilter("No.", Filter);
+        SalesOrder.SetTableView(SalesHeader);
+        SalesOrder.Editable := true;
+        SalesOrder.Run();
+    end;
+
     local procedure RemoveRepeated(var TxtList: List of [Text])
     var
         Txt: Text;
@@ -240,12 +286,12 @@ codeunit 60150 "Stock Mgmt"
         TxtList := Set;
     end;
 
-    local procedure GetFilterFromListOfPurchHeaderNo(PurchHeaderNoList: List of [Text]) Filter: Text
+    local procedure GetFilterFromListOfHeaderNo(HeaderNoList: List of [Text]) Filter: Text
     var
         PurchNo: Text;
         NoList: List of [Text];
     begin
-        foreach PurchNo in PurchHeaderNoList do begin
+        foreach PurchNo in HeaderNoList do begin
             if not NoList.Contains(PurchNo) then begin
                 NoList.Add(PurchNo);
                 Filter := Filter + PurchNo + '|';
@@ -256,20 +302,42 @@ codeunit 60150 "Stock Mgmt"
         exit(Filter);
     end;
 
-    /* local procedure RemovePurchLineFromSalesLines(PurchaseLine: Record "Purchase Line")
+    procedure ClearLinkedPurchOrders(SalesHeader: Record "Sales Header")
     var
-            SalesLine: Record "Sales Line";
-        begin
-            SalesLine.SetRange("Purch. Order Line No.", PurchaseLine."Line No.");
-            SalesLine.SetRange("Purchase Order No.", PurchaseLine."Document No.");
-            if SalesLine.FindSet() then
-                repeat
-                    Message('test');
-                    SalesLine."Purch. Order Line No." := 0;
-                    SalesLine."Purchase Order No." := '';
-                until SalesLine.next = 0;
-     ;
-    end; */
+        SalesLine: Record "Sales Line";
+    begin
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        if SalesLine.FindSet() then
+            repeat
+                if HasPurchLineLinked(SalesLine) then begin
+                    SalesLine."Purchase Line Document No" := '';
+                    SalesLine."Purchase Line No" := 0;
+                    SalesLine.Modify();
+                end;
+            until SalesLine.Next() = 0;
+        Commit();
+    end;
+
+    procedure ClearLinkedSalesOrders(PurchaseHeader: Record "Purchase Header")
+    var
+        PurchaseLine: Record "Purchase Line";
+        SalesLine: Record "Sales Line";
+    begin
+
+        PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
+        if PurchaseLine.FindSet() then
+            repeat
+                SalesLine.SetRange("Purchase Line Document No", PurchaseLine."Document No.");
+                SalesLine.SetRange("Purchase Line No", PurchaseLine."Line No.");
+                if SalesLine.FindSet() then
+                    repeat
+                        SalesLine."Purchase Line Document No" := '';
+                        SalesLine."Purchase Line No" := 0;
+                        SalesLine.Modify();
+                    until SalesLine.Next() = 0;
+            until PurchaseLine.Next() = 0;
+        Commit();
+    end;
 
     var
         StockMgmt: Codeunit "Stock Mgmt";
@@ -280,5 +348,7 @@ codeunit 60150 "Stock Mgmt"
 
         ConfirmPurchaseLabel: Label 'There is not enough stock of one or more items in the order. Do you want to purchase the missing amounts?';
         PurchasedOrdersLabel: Label 'One or more purchase orders have been created or modified.';
-        NoLinkedOrdersLabel: Label 'There are no linked purchase orders for this sale order.';
+        NoLinkedPurchOrdersLabel: Label 'There are no purchase orders linked to this sales order.';
+        NoLinkedSalesOrdersLabel: Label 'There are no sales orders linked to this purchase order.';
+
 }

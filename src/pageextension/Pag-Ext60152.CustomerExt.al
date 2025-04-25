@@ -2,7 +2,7 @@
 // Remember that object names and IDs should be unique across all extensions.
 // AL snippets start with t*, like tpageext - give them a try and happy coding!
 
-pageextension 60200 CustomerExt extends "Customer Card"
+pageextension 60152 "Customer Ext" extends "Customer Card"
 {
     layout
     {

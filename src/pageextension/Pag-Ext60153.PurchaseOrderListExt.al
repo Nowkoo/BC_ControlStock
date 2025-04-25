@@ -1,4 +1,4 @@
-pageextension 60151 "Sales Order List Ext" extends "Sales Order List"
+pageextension 60153 "Purchase Order List Ext" extends "Purchase Order List"
 {
     layout
     {
@@ -7,64 +7,47 @@ pageextension 60151 "Sales Order List Ext" extends "Sales Order List"
 
     actions
     {
-        addafter(Action12)
+        addbefore(Action10)
         {
             group(StockControl)
             {
                 Caption = 'Stock control';
-                Image = Inventory;
-
-                action(EmailSubjects)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Email Subjects';
-                    //Enabled = Rec.Status <> Rec.Status::Released;
-                    Image = Email;
-                    //ShortCutKey = 'Ctrl+F9';
-                    ToolTip = 'Set an email subject for each type of customer.';
-
-                    // RunObject = page "Purchase Order List";
-                    // RunPageLink = "No." = filter(106005 .. 106007);
-
-                    trigger OnAction()
-                    begin
-                        Page.Run(Page::"Email Subjects");
-                    end;
-                }
-
                 action(LinkedOrders)
                 {
                     ApplicationArea = All;
                     Caption = 'Linked Orders';
                     //Enabled = Rec.Status <> Rec.Status::Released;
                     Image = RelatedInformation;
+
                     //ShortCutKey = 'Ctrl+F9';
                     ToolTip = 'Display the purchase orders linked to this sales order.';
+
+
 
                     // RunObject = page "Purchase Order List";
                     // RunPageLink = "No." = filter(106005 .. 106007);
 
                     trigger OnAction()
                     begin
-                        StockMgmt.DisplayLinkedPurchaseOrders(Rec);
+                        StockMgmt.DisplayLinkedSalesOrders(Rec);
                     end;
                 }
 
-                action(ClearPurchOrders)
+                action(ClearSalesOrders)
                 {
                     ApplicationArea = All;
                     Caption = 'Clear linked orders';
                     //Enabled = Rec.Status <> Rec.Status::Released;
                     Image = ClearLog;
                     //ShortCutKey = 'Ctrl+F9';
-                    ToolTip = 'Clear purchase orders linked to this sales order.';
+                    ToolTip = 'Clear sales orders linked to this purchase order.';
 
                     // RunObject = page "Purchase Order List";
                     // RunPageLink = "No." = filter(106005 .. 106007);
 
                     trigger OnAction()
                     begin
-                        StockMgmt.ClearLinkedPurchOrders(Rec);
+                        StockMgmt.ClearLinkedSalesOrders(Rec);
                     end;
                 }
             }

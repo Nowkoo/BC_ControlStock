@@ -16,7 +16,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Email Subjects - Field Subject - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3840364725 - NamedType 1907521497" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There is not enough stock for one or more items in the order. Do you want to purchase the missing amounts?</source>
+          <source>There is not enough stock of one or more items in the order. Do you want to purchase the missing amounts?</source>
           <target>No hay suficiente stock de uno o más productos de este pedido. ¿Quiere comprar las cantidades que falten?</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ConfirmPurchaseLabel</note>
@@ -39,11 +39,17 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ErrorTryReleaseWhenReceived</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3840364725 - NamedType 1125844453" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There are no linked purchase orders for this sale order.</source>
+        <trans-unit id="Codeunit 3840364725 - NamedType 602111953" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no purchase orders linked to this sales order.</source>
           <target>No hay pedidos de compra vinculados a este pedido de venta.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType NoLinkedOrdersLabel</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType NoLinkedPurchOrdersLabel</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 212368229" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no sales orders linked to this purchase order.</source>
+          <target>No hay pedidos de venta vinculados a este pedido de compra.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType NoLinkedSalesOrdersLabel</note>
         </trans-unit>
         <trans-unit id="Codeunit 3840364725 - NamedType 154605416" size-unit="char" translate="yes" xml:space="preserve">
           <source>One or more purchase orders have been created or modified.</source>
@@ -81,11 +87,89 @@
           <note from="Developer" annotates="general" priority="2">Foo</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Email Body RDL Report - ReportLabel DateTxt</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1713901351 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+        <trans-unit id="PageExtension 2204447775 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Select a Customer Type.</source>
           <target>Seleccione el tipo de cliente.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerExt - Control Customer Type - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Customer Ext - Control Customer Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 515410600 - Action 1784957681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
+          <source>Stock control</source>
+          <target>Control de stock</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order Ext - Action StockControl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 515410600 - Action 2117328752 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
+          <source>Clear sales orders linked to this purchase order.</source>
+          <target>Desvincular pedidos de venta vinculados a este pedido de compra.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order Ext - Action ClearSalesOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 515410600 - Action 2117328752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
+          <source>Clear linked orders</source>
+          <target>Desvincular pedidos</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order Ext - Action ClearSalesOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 515410600 - Action 3649379592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
+          <source>Display the purchase orders linked to this sales order.</source>
+          <target>Mostrar pedidos de compra vinculados a este pedido de venta.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order Ext - Action LinkedOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 515410600 - Action 3649379592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
+          <source>Linked Orders</source>
+          <target>Pedidos vinculados</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 912914594 - Action 1784957681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3195034673">
+          <source>Stock control</source>
+          <target>Control de stock</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order List Ext - Action StockControl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 912914594 - Action 2117328752 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3195034673">
+          <source>Clear sales orders linked to this purchase order.</source>
+          <target>Desvincular pedidos de venta vinculados a este pedido de compra.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order List Ext - Action ClearSalesOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 912914594 - Action 2117328752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3195034673">
+          <source>Clear linked orders</source>
+          <target>Desvincular pedidos.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order List Ext - Action ClearSalesOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 912914594 - Action 3649379592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3195034673">
+          <source>Display the purchase orders linked to this sales order.</source>
+          <target>Mostrar pedidos de compra vinculados a este pedido de venta.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order List Ext - Action LinkedOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 912914594 - Action 3649379592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3195034673">
+          <source>Linked Orders</source>
+          <target>Pedidos vinculados</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order List Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 1784957681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Stock control</source>
+          <target>Control de stock</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action StockControl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 1979441508 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Clear purchase orders linked to this sales order.</source>
+          <target>Desvincular pedidos de compra vinculados a este pedido de venta.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action ClearPurchOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 1979441508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Clear linked orders</source>
+          <target>Desvincular pedidos.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action ClearPurchOrders - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1633892545 - Action 3525984917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Set an email subject for each type of customer.</source>
@@ -110,6 +194,24 @@
           <target>Pedidos vinculados</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 1784957681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Stock control</source>
+          <target>Control de stock</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action StockControl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 1979441508 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Clear purchase orders linked to this sales order.</source>
+          <target>Desvincular pedidos de compra vinculados a este pedido de venta.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action ClearPurchOrders - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 1979441508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Clear linked orders</source>
+          <target>Desvincular pedidos</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action ClearPurchOrders - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1737375231 - Action 3525984917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
           <source>Set an email subject for each type of customer.</source>
