@@ -1,4 +1,3 @@
-//traducción del enum con labels?
 enum 60150 "Customer Type Enum"
 {
     Extensible = true;

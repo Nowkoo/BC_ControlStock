@@ -10,6 +10,7 @@ codeunit 60151 "Email Mgmt"
     //MailManagement: Codeunit "Mail Management";
     begin
         Clear(TempEmailItem);
+        Clear(SalesInvoiceHeader);
 
         SalesInvoiceHeader.SetRange("Order No.", SalesHeader."No.");
         if not SalesInvoiceHeader.FindSet() then

@@ -89,7 +89,9 @@ codeunit 60150 "Stock Mgmt"
             end
             else
                 RunFilteredPurchaseOrders(Filter);
-        end;
+        end
+        else
+            Message(NoLinkedOrdersLabel);
         exit(PurchHeaderNoList)
     end;
 
@@ -278,6 +280,5 @@ codeunit 60150 "Stock Mgmt"
 
         ConfirmPurchaseLabel: Label 'There is not enough stock of one or more items in the order. Do you want to purchase the missing amounts?';
         PurchasedOrdersLabel: Label 'One or more purchase orders have been created or modified.';
-
-
+        NoLinkedOrdersLabel: Label 'There are no linked purchase orders for this sale order.';
 }

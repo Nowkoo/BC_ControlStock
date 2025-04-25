@@ -33,6 +33,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ErrorTryReleaseWhenReceived</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3840364725 - NamedType 1125844453" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no linked purchase orders for this sale order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType NoLinkedOrdersLabel</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3840364725 - NamedType 154605416" size-unit="char" translate="yes" xml:space="preserve">
           <source>One or more purchase orders have been created or modified.</source>
           <note from="Developer" annotates="general" priority="2"></note>
