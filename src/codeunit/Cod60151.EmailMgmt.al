@@ -7,8 +7,7 @@ codeunit 60151 "Email Mgmt"
         GlobalHideDialog: Boolean;
         GlobalEmailScenario: Enum "Email Scenario";
         SalesInvoiceHeader: Record "Sales Invoice Header";
-
-        MailManagement: Codeunit "Mail Management";
+    //MailManagement: Codeunit "Mail Management";
     begin
         Clear(TempEmailItem);
 

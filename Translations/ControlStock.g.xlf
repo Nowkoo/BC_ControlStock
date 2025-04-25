@@ -14,7 +14,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Email Subjects - Field Subject - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3840364725 - NamedType 1907521497" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There is not enough stock for one or more items in the order. Do you want to purchase the missing amounts?</source>
+          <source>There is not enough stock of one or more items in the order. Do you want to purchase the missing amounts?</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType ConfirmPurchaseLabel</note>
         </trans-unit>
@@ -122,6 +122,31 @@
           <source>Purchase Line No</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Table Sales Line Ext - Field Purchase Line No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2053995473 - EnumValue 3060754182 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Collaborator</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Type Enum - EnumValue Collaborator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2053995473 - EnumValue 3133801257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Company</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Type Enum - EnumValue Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2053995473 - EnumValue 1383905037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Type Enum - EnumValue Default - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2053995473 - EnumValue 1498446062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Type Enum - EnumValue Employee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2053995473 - EnumValue 3064074535 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Private customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Type Enum - EnumValue Private - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 935227093 - ReportLayout 4204597913 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Custom sales invoice in Word</source>

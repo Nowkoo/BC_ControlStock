@@ -276,7 +276,7 @@ codeunit 60150 "Stock Mgmt"
         ErrorAllLinesAreLinked: Label 'All the items in this order are already linked to a purchase order. Sale Order was not released. Try again when the items are received.';
         ErrorNotEnoughStockLabel: Label 'Sale Order was not released because there is not enough stock of one or more items.';
 
-        ConfirmPurchaseLabel: Label 'There is not enough stock for one or more items in the order. Do you want to purchase the missing amounts?';
+        ConfirmPurchaseLabel: Label 'There is not enough stock of one or more items in the order. Do you want to purchase the missing amounts?';
         PurchasedOrdersLabel: Label 'One or more purchase orders have been created or modified.';
 
 
