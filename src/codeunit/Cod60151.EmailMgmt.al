@@ -47,6 +47,14 @@ codeunit 60151 "Email Mgmt"
             exit(Customer."E-Mail");
     end;
 
+    //nuevo botón:
+    // abrir nueva pág que muestre lista de custom report layouts solo de tipo word y permita añadirlos o copiarlos usando mismos métodos que custom report layout.
+    //btn para seleccionar un layout de la lista y btn para crear nuevo layout
+    //extender custom report layouts para añadir campo email layout que al insertar desde la nueva pág se pone en true, la nueva pág muestra solo los que tienen ese campo en true.
+    //crear tabla que almacene el layout seleccionado o añadir otro campo a custom report layouts para saber cuál es
+
+    //btn abre custom report layouts y custom report layouts tiene un nuevo botón para configurar el email body
+
     procedure GetEmailBody(var SalesInvoiceHeader: Record "Sales Invoice Header"): Text
     var
         InStream: InStream;

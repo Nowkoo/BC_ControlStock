@@ -48,10 +48,110 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Stock Mgmt - NamedType PurchasedOrdersLabel</note>
         </trans-unit>
+        <trans-unit id="Page 3104805162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email Body Word Layouts</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - NamedType 141585515" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Built-in layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - NamedType BuiltInTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - NamedType 2855594040" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy of %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - NamedType CopyOfTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - NamedType 3537813164" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Word Files (*.docx)|*.docx</source>
+          <note from="Developer" annotates="general" priority="2">{Split=r'\|'}{Locked=s'1'}</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - NamedType FileFilterWordTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - NamedType 2358513986" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - NamedType NewLayoutTxt</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the Code.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Control 3997336476 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the Business Central company that the report layout applies to. You to create report layouts that can only be used on reports when they are run for a specific to a company. If the field is blank, then the layout will be available for use in all companies.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Control Company Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a description of the report layout.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Control 1272245069 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the object ID of the report.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Control Report ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Control 4101026147 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the name of the report.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Control Report Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the file type of the report layout. The following table includes the types that are available:</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Control Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Action 2193903826 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export a Word layout file.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action ExportLayout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Action 2193903826 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action ExportLayout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Action 4137051400 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Upload a new Word layout file to use as email body when posting a sales order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action New - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Action 4137051400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action New - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Action 2746247081 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run a test report.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action RunReport - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3104805162 - Action 2746247081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Run Report</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action RunReport - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 473686509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Email Subjects</source>
+          <source>Posting Email Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 473686509 - Control 3104805162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email Body Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Email Body Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 473686509 - Control 3540604197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selected layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Selected layout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 473686509 - Control 172738764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email Subject by Customer Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Email Subject - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 473686509 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type of the customer.</source>
@@ -197,6 +297,11 @@
           <source>Linked Orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3186254788 - Field 2250103330 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4072591505">
+          <source>Email Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Table Custom Report Layout Ext - Field Email Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2393976901 - Field 1754546768 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Customer Type</source>

@@ -2,7 +2,7 @@ page 60150 "Email Subjects"
 {
     PageType = List;
     ApplicationArea = All;
-    Caption = 'Email Subjects';
+    Caption = 'Posting Email Setup';
     Extensible = false;
     SourceTable = "Email Subjects";
     UsageCategory = Lists;
@@ -13,18 +13,44 @@ page 60150 "Email Subjects"
     {
         area(Content)
         {
-            repeater(General)
+            group("Email Body Layout")
             {
-                field("Customer Type"; Rec."Customer Type")
+                Caption = 'Email Body Layout';
+                field("Selected layout"; SelectedLayout)
                 {
-                    ToolTip = 'Type of the customer.';
+                    ToolTip = 'Selected layout';
                     ApplicationArea = All;
-                    Editable = false;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        CustomReportLayout: Record "Custom Report Layout";
+                    begin
+                        CustomReportLayout.Reset();
+                        if Page.RunModal(Page::"Custom Report Layouts", CustomReportLayout) = Action::LookupOK then begin
+                            SelectedLayout := CustomReportLayout."Report Name" + ' - ' + CustomReportLayout.Description;
+                            //almacenar el código del layout y cargarlo al body del correo cuando se cree el correo
+                            Message(CustomReportLayout.code)
+                        end;
+                    end;
                 }
-                field("Subject"; Rec."Subject")
+            }
+
+            group("Email Subject")
+            {
+                Caption = 'Email Subject by Customer Type';
+                repeater(General)
                 {
-                    ToolTip = 'Specify a subject for the email to this customer type.';
-                    ApplicationArea = All;
+                    field("Customer Type"; Rec."Customer Type")
+                    {
+                        ToolTip = 'Type of the customer.';
+                        ApplicationArea = All;
+                        Editable = false;
+                    }
+                    field("Subject"; Rec."Subject")
+                    {
+                        ToolTip = 'Specify a subject for the email to this customer type.';
+                        ApplicationArea = All;
+                    }
                 }
             }
         }
@@ -32,7 +58,20 @@ page 60150 "Email Subjects"
 
     actions
     {
-
+        area(Processing)
+        {
+            action(test)
+            {
+                trigger OnAction()
+                var
+                    CustomReportLayout: Record "Custom Report Layout";
+                begin
+                    CustomReportLayout.Reset();
+                    if Page.RunModal(Page::"Custom Report Layouts", CustomReportLayout) = Action::LookupOK then
+                        Message(CustomReportLayout."Report Name");
+                end;
+            }
+        }
     }
 
     trigger OnOpenPage()
@@ -54,4 +93,7 @@ page 60150 "Email Subjects"
             end;
         end;
     end;
+
+    var
+        SelectedLayout: Text;
 }

@@ -137,7 +137,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 912914594 - Action 2117328752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3195034673">
           <source>Clear linked orders</source>
-          <target>Desvincular pedidos.</target>
+          <target>Desvincular pedidos</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Order List Ext - Action ClearSalesOrders - Property Caption</note>
         </trans-unit>
@@ -167,7 +167,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1633892545 - Action 1979441508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Clear linked orders</source>
-          <target>Desvincular pedidos.</target>
+          <target>Desvincular pedidos</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action ClearPurchOrders - Property Caption</note>
         </trans-unit>
