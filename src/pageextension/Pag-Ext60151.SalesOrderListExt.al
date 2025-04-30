@@ -14,21 +14,21 @@ pageextension 60151 "Sales Order List Ext" extends "Sales Order List"
                 Caption = 'Stock control';
                 Image = Inventory;
 
-                action(EmailSubjects)
+                action(PostingEmailSetup)
                 {
                     ApplicationArea = All;
-                    Caption = 'Email Subjects';
+                    Caption = 'Posting Email Setup';
                     //Enabled = Rec.Status <> Rec.Status::Released;
                     Image = Email;
                     //ShortCutKey = 'Ctrl+F9';
-                    ToolTip = 'Set an email subject for each type of customer.';
+                    ToolTip = 'Configure subject and body for the email sent to the customer after posting a sales order.';
 
                     // RunObject = page "Purchase Order List";
                     // RunPageLink = "No." = filter(106005 .. 106007);
 
                     trigger OnAction()
                     begin
-                        Page.Run(Page::"Email Subjects");
+                        Page.Run(Page::"Posting Email Setup");
                     end;
                 }
 

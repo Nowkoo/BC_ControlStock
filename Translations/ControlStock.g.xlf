@@ -13,6 +13,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Email Subjects - Field Subject - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4186854011 - Field 4246450271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Key Field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Configuration - Field Key Field - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4186854011 - Field 3300948010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selected Layout Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Configuration - Field Selected Layout Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4186854011 - Field 708468528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selected Layout Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Extension Configuration - Field Selected Layout Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 454934481 - NamedType 1131565486" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is no layout selected.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Email Mgmt - NamedType NoLayoutSelected</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 454934481 - NamedType 3314273988" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Could not find the selected layout.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Email Mgmt - NamedType SelectedLayoutNotFound</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3840364725 - NamedType 1907521497" size-unit="char" translate="yes" xml:space="preserve">
           <source>There is not enough stock of one or more items in the order. Do you want to purchase the missing amounts?</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -133,35 +158,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Email Body Layout - Action RunReport - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 473686509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2597278317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Email Setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 473686509 - Control 3104805162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Email Body Layout</source>
+        <trans-unit id="Page 2597278317 - NamedType 3690873739" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please select a Word layout.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Email Body Layout - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - NamedType ErrorNotWordLayout</note>
         </trans-unit>
-        <trans-unit id="Page 473686509 - Control 3540604197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2597278317 - Control 3104805162 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email Body Word Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Control Email Body Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2597278317 - Control 3540604197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Selected layout</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Selected layout - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Control Selected layout - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 473686509 - Control 172738764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2597278317 - Control 3540604197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Selected layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Control Selected layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2597278317 - Control 172738764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Email Subject by Customer Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Email Subject - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Control Email Subject - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 473686509 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2597278317 - Control 1754546768 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type of the customer.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Customer Type - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Control Customer Type - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 473686509 - Control 1234124704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2597278317 - Control 1234124704 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specify a subject for the email to this customer type.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Email Subjects - Control Subject - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Posting Email Setup - Control Subject - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 2001373572 - ReportLabel 3871258722" size-unit="char" translate="yes" xml:space="preserve">
           <source>Your order will be sent to </source>
@@ -243,16 +278,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action ClearPurchOrders - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1633892545 - Action 3525984917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
-          <source>Set an email subject for each type of customer.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action EmailSubjects - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1633892545 - Action 3525984917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
-          <source>Email Subjects</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action EmailSubjects - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 1633892545 - Action 3649379592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Display the purchase orders linked to this sales order.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -262,6 +287,16 @@
           <source>Linked Orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 2939324173 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Configure subject and body for the email sent to the customer after posting a sales order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action PostingEmailSetup - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1633892545 - Action 2939324173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Posting Email Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order Ext - Action PostingEmailSetup - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1737375231 - Action 1784957681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
           <source>Stock control</source>
@@ -278,16 +313,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action ClearPurchOrders - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1737375231 - Action 3525984917 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
-          <source>Set an email subject for each type of customer.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action EmailSubjects - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1737375231 - Action 3525984917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
-          <source>Email Subjects</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action EmailSubjects - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 1737375231 - Action 3649379592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
           <source>Display the purchase orders linked to this sales order.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -297,6 +322,16 @@
           <source>Linked Orders</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action LinkedOrders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 2939324173 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Configure subject and body for the email sent to the customer after posting a sales order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action PostingEmailSetup - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1737375231 - Action 2939324173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3332899200">
+          <source>Posting Email Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Sales Order List Ext - Action PostingEmailSetup - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3186254788 - Field 2250103330 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4072591505">
           <source>Email Layout</source>

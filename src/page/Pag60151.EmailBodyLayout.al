@@ -7,7 +7,6 @@ page 60151 "Email Body Layout"
     SourceTable = "Custom Report Layout";
     UsageCategory = Lists;
     InsertAllowed = false;
-    DeleteAllowed = false;
 
     layout
     {
@@ -68,65 +67,8 @@ page 60151 "Email Body Layout"
                 PromotedCategory = Process;
 
                 trigger OnAction()
-                var
-                    CustomReportLayout: Record "Custom Report Layout";
-                    TempBlob: Codeunit "Temp Blob";
-                    OutputTempBlob: Codeunit "Temp Blob";
-                    DocumentReportMgt: Codeunit "Document Report Mgt.";
-                    OutStr: OutStream;
-                    InStr: InStream;
-                    ReportID: Integer;
-                    LayoutType: Option;
-
-                    FileMgt: Codeunit "File Management";
-                    FileName: Text;
-                    FileFilterTxt: Text;
-                    ImportTxt: Text;
-                    ErrorMessage: Text;
-                    XmlPart: Text;
                 begin
-                    ReportID := Report::"Email Body Word Report";
-                    LayoutType := CustomReportLayout.Type::Word.AsInteger();
-                    XmlPart := CustomReportLayout.GetWordXmlPart(ReportID);
-
-                    CustomReportLayout.Init();
-                    CustomReportLayout."Report ID" := ReportID;
-                    CustomReportLayout.Type := "Custom Report Layout Type".FromInteger(LayoutType);
-                    CustomReportLayout.Description := CopyStr(StrSubstNo(CopyOfTxt, BuiltInTxt), 1, MaxStrLen(CustomReportLayout.Description));
-                    CustomReportLayout."Built-In" := false;
-                    CustomReportLayout.Code := CustomReportLayout.GetDefaultCode(ReportID);
-                    CustomReportLayout."Email Layout" := true;
-
-                    OutputTempBlob.CreateOutStream(OutStr);
-
-                    case LayoutType of
-                        CustomReportLayout.Type::Word.AsInteger():
-                            begin
-                                FileName := FileMgt.BLOBImportWithFilter(TempBlob, ImportTxt, '', FileFilterWordTxt, FileFilterWordTxt);
-                                if FileName = '' then
-                                    exit;
-
-                                TempBlob.CreateInStream(InStr);
-                                ErrorMessage := DocumentReportMgt.TryUpdateWordLayout(InStr, OutStr, '', XmlPart);
-                                // Validate the Word document layout against the layout of the current report
-                                if ErrorMessage = '' then begin
-                                    CustomReportLayout.Insert(true);
-                                    CopyStream(OutStr, InStr);
-                                    DocumentReportMgt.ValidateWordLayout(ReportID, InStr, true, true);
-                                    CustomReportLayout.SetLayoutBlob(OutputTempBlob);
-                                end;
-                            end;
-                    end;
-
-                    if CustomReportLayout."File Extension" <> '' then
-                        CustomReportLayout."File Extension" := CopyStr(UpperCase(FileMgt.GetExtension(FileName)), 1, 30);
-                    CustomReportLayout.SetDefaultCustomXmlPart();
-                    CustomReportLayout."Layout Last Updated" := RoundDateTime(CurrentDateTime);
-
-                    Commit();
-
-                    if ErrorMessage <> '' then
-                        Message(ErrorMessage);
+                    UploadWordLayout(Report::"Email Body Word Report");
                 end;
             }
 
@@ -162,6 +104,66 @@ page 60151 "Email Body Layout"
             }
         }
     }
+
+    local procedure UploadWordLayout(ReportID: Integer)
+    var
+        CustomReportLayout: Record "Custom Report Layout";
+        TempBlob: Codeunit "Temp Blob";
+        OutputTempBlob: Codeunit "Temp Blob";
+        DocumentReportMgt: Codeunit "Document Report Mgt.";
+        OutStr: OutStream;
+        InStr: InStream;
+        LayoutType: Option;
+
+        FileMgt: Codeunit "File Management";
+        FileName: Text;
+        FileFilterTxt: Text;
+        ImportTxt: Text;
+        ErrorMessage: Text;
+        XmlPart: Text;
+    begin
+        LayoutType := CustomReportLayout.Type::Word.AsInteger();
+        XmlPart := CustomReportLayout.GetWordXmlPart(ReportID);
+
+        CustomReportLayout.Init();
+        CustomReportLayout."Report ID" := ReportID;
+        CustomReportLayout.Type := "Custom Report Layout Type".FromInteger(LayoutType);
+        CustomReportLayout.Description := CopyStr(StrSubstNo(CopyOfTxt, BuiltInTxt), 1, MaxStrLen(CustomReportLayout.Description));
+        CustomReportLayout."Built-In" := false;
+        CustomReportLayout.Code := CustomReportLayout.GetDefaultCode(ReportID);
+        CustomReportLayout."Email Layout" := true;
+
+        OutputTempBlob.CreateOutStream(OutStr);
+
+        case LayoutType of
+            CustomReportLayout.Type::Word.AsInteger():
+                begin
+                    FileName := FileMgt.BLOBImportWithFilter(TempBlob, ImportTxt, '', FileFilterWordTxt, FileFilterWordTxt);
+                    if FileName = '' then
+                        exit;
+
+                    TempBlob.CreateInStream(InStr);
+                    ErrorMessage := DocumentReportMgt.TryUpdateWordLayout(InStr, OutStr, '', XmlPart);
+                    // Validate the Word document layout against the layout of the current report
+                    if ErrorMessage = '' then begin
+                        CustomReportLayout.Insert(true);
+                        CopyStream(OutStr, InStr);
+                        DocumentReportMgt.ValidateWordLayout(ReportID, InStr, true, true);
+                        CustomReportLayout.SetLayoutBlob(OutputTempBlob);
+                    end;
+                end;
+        end;
+
+        if CustomReportLayout."File Extension" <> '' then
+            CustomReportLayout."File Extension" := CopyStr(UpperCase(FileMgt.GetExtension(FileName)), 1, 30);
+        CustomReportLayout.SetDefaultCustomXmlPart();
+        CustomReportLayout."Layout Last Updated" := RoundDateTime(CurrentDateTime);
+
+        Commit();
+
+        if ErrorMessage <> '' then
+            Message(ErrorMessage);
+    end;
 
     var
         BuiltInTxt: Label 'Built-in layout';
