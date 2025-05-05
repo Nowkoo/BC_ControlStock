@@ -378,6 +378,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum Customer Type Enum - EnumValue Private - Property Caption</note>
         </trans-unit>
+        <trans-unit id="ReportExtension 935227093 - ReportLabel 3167727044" maxwidth="999" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Discount %</source>
+          <note from="Developer" annotates="general" priority="2">Foo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales Invoice Ext - ReportLabel PctDiscountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 935227093 - ReportLabel 1370894183" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Total discount</source>
+          <note from="Developer" annotates="general" priority="2">Foo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales Invoice Ext - ReportLabel TotalDiscountLbl</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 935227093 - ReportLabel 3407423785" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Total VAT|EC</source>
+          <note from="Developer" annotates="general" priority="2">Foo</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension Standard Sales Invoice Ext - ReportLabel TotalVATEC</note>
+        </trans-unit>
         <trans-unit id="ReportExtension 935227093 - ReportLayout 4204597913 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Custom sales invoice in Word</source>
           <note from="Developer" annotates="general" priority="2"></note>

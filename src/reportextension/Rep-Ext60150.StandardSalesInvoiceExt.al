@@ -3,7 +3,7 @@ reportextension 60150 "Standard Sales Invoice Ext" extends "Standard Sales - Inv
 {
     dataset
     {
-        // Add changes to dataitems and columns here
+
     }
 
     requestpage
@@ -20,5 +20,12 @@ reportextension 60150 "Standard Sales Invoice Ext" extends "Standard Sales - Inv
             Summary = 'Custom sales invoice in Word';
             LayoutFile = 'customlayout.docx';
         }
+    }
+
+    labels
+    {
+        PctDiscountLbl = 'Discount %', Comment = 'Foo', MaxLength = 999, Locked = false;
+        TotalDiscountLbl = 'Total discount', Comment = 'Foo', Locked = false;
+        TotalVATEC = 'Total VAT|EC', Comment = 'Foo', Locked = false;
     }
 }

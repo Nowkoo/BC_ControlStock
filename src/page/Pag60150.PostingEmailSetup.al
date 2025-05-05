@@ -31,6 +31,7 @@ page 60150 "Posting Email Setup"
                     }
                 }
             }
+
             group("Email Body Layout")
             {
                 Caption = 'Email Body Word Layout';

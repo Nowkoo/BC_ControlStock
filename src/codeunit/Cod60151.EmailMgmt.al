@@ -20,7 +20,7 @@ codeunit 60151 "Email Mgmt"
         TempEmailItem.Validate("Send to", GetEmailAddress(SalesHeader."Sell-to Customer No."));
         TempEmailItem.Subject := GetSubject(SalesHeader."Sell-to Customer No.");
         AddReportAsAttachment(SalesInvoiceHeader, TempEmailItem);
-        GlobalHideDialog := true;
+        GlobalHideDialog := false;
         TempEmailItem.Send(GlobalHideDialog, GlobalEmailScenario);
         //MailManagement.Send(TempEmailItem, GlobalEmailScenario);
     end;

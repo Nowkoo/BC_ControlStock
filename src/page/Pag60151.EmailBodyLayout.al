@@ -105,6 +105,7 @@ page 60151 "Email Body Layout"
         }
     }
 
+    //Para subir layouts de Word a Custom Report Layouts para el Report que especifiquemos como parámetro
     local procedure UploadWordLayout(ReportID: Integer)
     var
         CustomReportLayout: Record "Custom Report Layout";

@@ -30,7 +30,6 @@ pageextension 60150 "Sales Order Ext" extends "Sales Order"
             end;
         } */
 
-
         addafter(Action21)
         {
             group(StockControl)
